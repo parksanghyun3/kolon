@@ -10,7 +10,7 @@ br.only-mob {display: none;}
 .section-title {font-size: 50px; font-weight: 700; letter-spacing: -.08em;}
 /* -------------------------------------- common css end ------------------------------------- */
 /* -------------------------------------- haeder start ------------------------------------- */
-header {position: fixed; top: 0; left: 0; width: 100%; height: 60px; background-color: #fff; border-bottom: 1px solid #ddd; z-index: 999;}
+header {position: fixed; top: 0; left: 0; width: 100%; height: 0; background-color: #fff; border-bottom: 1px solid #ddd; z-index: 999;}
 /* -------------------------------------- haeder end ------------------------------------- */
 
 
@@ -20,16 +20,27 @@ header {position: fixed; top: 0; left: 0; width: 100%; height: 60px; background-
 
 /* section1 */
 
-#section1 {padding-top: 200px;}
+#section1 {padding: 200px 0 0 0; border: 1px solid red;}
 #section1 .fixed-con {margin-top: 100px; display: flex; justify-content: space-between;}
-#section1 .left-layout {margin-right: 50px; max-width: 600px;}
-#section1 .left-layout .con-title {font-size: 35px; font-weight: 700;}
+#section1 .left-layout {width: 50%; margin-right: 50px;}
+#section1 .left-layout .txt-list {height: 80vh;}
+#section1 .left-layout .con-title {padding-top: 10vh; font-size: 35px; font-weight: 700;}
 #section1 .left-layout .con-subtit {margin-top: 40px; font-size: 30px; font-weight: 700;}
+#section1 .left-layout .con-txt {}
+#section1 .left-layout .con-txt p {margin-top: 28px;}
+#section1 .left-layout .logo-box {margin-top: 100px;}
 
-#section1 .right-layout {position: relative; width: 600px; height: 700px; border-radius: 15px; overflow: hidden;}
-#section1 .right-layout .fixed-img {position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
-#section1 .right-layout .fixed-img:nth-child(1) {background: url("../images/img-kolon-intro-vision.jpg") no-repeat; background-position: center; background-size: cover;}
-#section1 .right-layout .fixed-img:nth-child(2) {background: url("../images/img-kolon-intro-core-value.jpg") no-repeat; background-position: center; background-size: cover;}
-#section1 .right-layout .fixed-img img {width: 100%;}
+#section1 .right-layout {width: 50%; height: 700px;}
+#section1 .right-layout .img-wrap {position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 15px;}
+#section1 .right-layout .fixed-img {position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; border-radius: 15px;}
+#section1 .right-layout .fixed-img:nth-child(1) {z-index: 3;}
+#section1 .right-layout .fixed-img:nth-child(2) {z-index: 2;}
+#section1 .right-layout .fixed-img:nth-child(3) {z-index: 1;}
+/* #section1 .right-layout .fixed-img:nth-child(1) {background: url("../images/img-kolon-intro-vision.jpg") no-repeat; background-position: center; background-size: cover;} */
+/* #section1 .right-layout .fixed-img:nth-child(2) {background: url("../images/img-kolon-intro-core-value.jpg") no-repeat; background-position: center; background-size: cover;} */
+#section1 .right-layout .fixed-img img {width: 100%; height: 100%; object-fit: cover;}
 
-#section2 {margin-top: 200px;}
+#section2 {height: 150vh; background-color: #1b1b1b;}
+
+
+
