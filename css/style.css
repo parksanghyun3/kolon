@@ -20,22 +20,24 @@ header {position: fixed; top: 0; left: 0; width: 100%; height: 0; background-col
 
 /* section1 */
 
-#section1 {padding: 200px 0 0 0; border: 1px solid red;}
-#section1 .fixed-con {margin-top: 100px; display: flex; justify-content: space-between;}
-#section1 .left-layout {width: 50%; margin-right: 50px;}
-#section1 .left-layout .txt-list {height: 80vh;}
-#section1 .left-layout .con-title {padding-top: 10vh; font-size: 35px; font-weight: 700;}
-#section1 .left-layout .con-subtit {margin-top: 40px; font-size: 30px; font-weight: 700;}
-#section1 .left-layout .con-txt {}
-#section1 .left-layout .con-txt p {margin-top: 28px;}
-#section1 .left-layout .logo-box {margin-top: 100px;}
+#section1 {padding: 200px 0 0 0;}
+#section1 .fixed-con {position: relative; padding-top: 100px; display: flex; justify-content: space-between;}
+#section1 .fixed-con::before {content: ""; position: fixed; top: 0; left: 0; display: block; width: 100%; height: 100px; background-color: #fff;}
 
-#section1 .right-layout {width: 50%; height: 700px;}
-#section1 .right-layout .img-wrap {position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 15px;}
+#section1 .left-layout {width: 50%; margin-right: 50px;}
+#section1 .left-layout .txt-list {padding: 10vh 0; height: 80vh;}
+#section1 .left-layout .txt-list:first-child {padding: 0;}
+#section1 .left-layout .con-title {font-size: 35px; font-weight: 700;}
+#section1 .left-layout .con-subtit {margin-top: 40px; font-size: 30px; font-weight: 700;}
+#section1 .left-layout .con-txt p {margin-top: 28px;}
+#section1 .left-layout .logo-box {margin-top: 50px;}
+
+#section1 .right-layout {width: 50%;}
+#section1 .right-layout .img-wrap {position: relative; width: 100%; height: 80vh; overflow: hidden; border-radius: 15px;}
 #section1 .right-layout .fixed-img {position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; border-radius: 15px;}
-#section1 .right-layout .fixed-img:nth-child(1) {z-index: 3;}
-#section1 .right-layout .fixed-img:nth-child(2) {z-index: 2;}
-#section1 .right-layout .fixed-img:nth-child(3) {z-index: 1;}
+#section1 .right-layout .fixed-img:nth-child(1) {z-index: 3; background: url("../images/img-kolon-intro-vision.jpg") no-repeat; background-position: center; background-size: cover;}
+#section1 .right-layout .fixed-img:nth-child(2) {z-index: 2;background: url("../images/img-kolon-intro-vision.jpg") no-repeat; background-position: center; background-size: cover;}
+#section1 .right-layout .fixed-img:nth-child(3) {z-index: 1; background: url("../images/img-kolon-intro-way.jpg") no-repeat; background-position: center; background-size: cover;}
 /* #section1 .right-layout .fixed-img:nth-child(1) {background: url("../images/img-kolon-intro-vision.jpg") no-repeat; background-position: center; background-size: cover;} */
 /* #section1 .right-layout .fixed-img:nth-child(2) {background: url("../images/img-kolon-intro-core-value.jpg") no-repeat; background-position: center; background-size: cover;} */
 #section1 .right-layout .fixed-img img {width: 100%; height: 100%; object-fit: cover;}
