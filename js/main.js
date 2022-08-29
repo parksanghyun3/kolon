@@ -2,12 +2,22 @@ $(document).ready(function(){
   // AOS.init();
 
   var fixedTop = $(".fixed-con").offset().top;
+  var sectionTop = $("#section2").offset().top - innerHeight;
 
   
   $(window).on("scroll", function(){
     var scrollTop = $(window).scrollTop();
+    // 스크롤이 content에 닿았을 때
     if(scrollTop >= fixedTop){
+      $("#section1").addClass("onScroll");
+    } else {
+      $("#section1").removeClass("onScroll");
     }
+    // 스크롤이 content를 넘어갔을 때
+    if(scrollTop > sectionTop){
+      $("#section1").removeClass("onScroll");
+    }
+
   });
 
   gsap.to(".right-layout", {
@@ -23,21 +33,31 @@ $(document).ready(function(){
     }
   });
 
-  $(".txt-list").each(function(){
+  $(".txt-list").each(function(e){
+      // gsap.to($(this), {
+      //   scrollTrigger: {
+      //     trigger: $(this),
+      //     start: "-25% top",
+      //     end: "bottom bottom",
+      //     pin: $(this),
+      //     pinSpacing: false,
+      //     scrub: true,
+      //     markers: true
+      //   }
+      // });
 
-  });
-  gsap.to(".fixed-img", {
-    top: "-100%",
-    stagger: .5,
-    scrollTrigger: {
-      trigger: ".txt-list",
-      start: "top top",
-      end: "bottom bottom",
-      pin: true,
-      markers: true,
-      pinSpacing: false,
-      scrub: true,
-    }
+      gsap.to($(".fixed-img").eq(e), {
+      top: "-100%",
+      scrollTrigger: {
+        trigger: $(this),
+        start: "top top",
+        end: "bottom top",
+        pin: true,
+        markers: true,
+        pinSpacing: false,
+        scrub: true,
+      }
+    });
   });
 
   // gsap.set(".right-layout", {
