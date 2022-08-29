@@ -50,7 +50,7 @@ $(document).ready(function(){
       top: "-100%",
       scrollTrigger: {
         trigger: $(this),
-        start: "top top",
+        start: "10% top",
         end: "bottom top",
         pin: true,
         markers: true,
