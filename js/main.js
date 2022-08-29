@@ -36,8 +36,8 @@ $(document).ready(function(){
   $(".txt-list").each(function(e){
       // gsap.to($(this), {
       //   scrollTrigger: {
-      //     trigger: $(this),
-      //     start: "-25% top",
+      //     trigger: $(this).find(".txt-wrap"),
+      //     start: "center top",
       //     end: "bottom bottom",
       //     pin: $(this),
       //     pinSpacing: false,
@@ -46,7 +46,7 @@ $(document).ready(function(){
       //   }
       // });
 
-      gsap.to($(".fixed-img").eq(e), {
+      gsap.to($(".fixed-img").eq(e).not(".fasten"), {
       top: "-100%",
       scrollTrigger: {
         trigger: $(this),
