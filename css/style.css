@@ -1,19 +1,28 @@
-* {padding: 0; margin: 0;}
-
-
-
+* {padding: 0; margin: 0; box-sizing: border-box;}
 
 /* -------------------------------------- common css start ------------------------------------- */
 .inner {margin: 0 auto; width: 1200px;}
 br.only-pc {display: block;}
 br.only-mob {display: none;}
-.section-title {font-size: 50px; font-weight: 700; letter-spacing: -.08em;}
+.section-title {font-size: 50px; font-weight: 700; letter-spacing: -.08em; word-break: keep-all;}
+
+@media screen and (max-width: 1280px) {
+  .inner {margin: 0 auto; width: calc(100% - 30px);}
+}
+@media screen and (max-width: 768px) {
+  .inner {margin: 0 auto; width: calc(100% - 30px);}
+  br.only-pc {display: none;}
+  br.only-mob {display: block;}
+  .section-title {font-size: 28px;}
+}
+
 /* -------------------------------------- common css end ------------------------------------- */
+
 /* -------------------------------------- haeder start ------------------------------------- */
+
 header {position: fixed; top: 0; left: 0; width: 100%; height: 0; background-color: #fff; border-bottom: 1px solid #ddd; z-index: 999;}
+
 /* -------------------------------------- haeder end ------------------------------------- */
-
-
 
 
 /* -------------------------------------- main start ------------------------------------- */
@@ -24,28 +33,44 @@ header {position: fixed; top: 0; left: 0; width: 100%; height: 0; background-col
 #section1 .fixed-con {position: relative; padding-top: 100px; display: flex; justify-content: space-between;}
 #section1.onScroll .fixed-con::before {z-index: 5; content: ""; position: fixed; top: 0; left: 0; display: block; width: 100%; height: 10vh; background-color: #fff;}
 #section1.onScroll .fixed-con::after {z-index: 5; content: ""; position: fixed; bottom: 0; left: 0; display: block; width: 100%; height: 10vh; background-color: #fff;}
-/* #section1 .fixed-con::after {z-index: 1; content: ""; position: fixed; bottom: 0; left: 0; display: block; width: 100%; height: 100px; background: linear-gradient(to top, #fff, transparent);} */
 
 #section1 .left-layout {position: relative; width: 50%; margin-right: 50px;}
-#section1.onScroll .left-layout::after {content: ""; position: fixed; bottom: 10%; left: 50%; transform: translateX(-50%); display: block; width: 1200px; height: 10vh; background: linear-gradient(to top, #fff, transparent);}
-#section1 .left-layout .txt-list {padding: 5vh 0;}
-/* #section1 .left-layout .txt-list:first-child {padding: 0;} */
+#section1 .left-layout .mob-img {display: none;}
+#section1.onScroll .left-layout::after {content: ""; z-index: 1; position: fixed; bottom: 10%; left: 50%; transform: translateX(-50%); display: block; width: 1200px; height: 10vh; background: linear-gradient(to top, #fff, transparent);}
+#section1 .left-layout .txt-list {display: flex; align-items: center; height: 80vh;}
 #section1 .left-layout .con-title {font-size: 35px; font-weight: 700;}
 #section1 .left-layout .con-subtit {margin-top: 40px; font-size: 30px; font-weight: 700;}
 #section1 .left-layout .con-txt p {margin-top: 28px;}
 #section1 .left-layout .logo-box {margin-top: 50px;}
 
-#section1 .right-layout {width: 50%;}
-#section1 .right-layout .img-wrap {position: relative; width: 100%; height: 80vh; overflow: hidden; border-radius: 15px;}
+#section1 .right-layout {z-index: 10; width: 50%; height: 80vh; overflow: hidden;}
+#section1 .right-layout .img-wrap {position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 15px;}
 #section1 .right-layout .fixed-img {position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; border-radius: 15px;}
-#section1 .right-layout .fixed-img:nth-child(1) {z-index: 3; background: url("../images/img-kolon-intro-vision.jpg") no-repeat; background-position: center; background-size: cover;}
-#section1 .right-layout .fixed-img:nth-child(2) {z-index: 2;background: url("../images/img-kolon-intro-core-value.jpg") no-repeat; background-position: center; background-size: cover;}
-#section1 .right-layout .fixed-img:nth-child(3) {z-index: 1; background: url("../images/img-kolon-intro-way.jpg") no-repeat; background-position: center; background-size: cover;}
-/* #section1 .right-layout .fixed-img:nth-child(1) {background: url("../images/img-kolon-intro-vision.jpg") no-repeat; background-position: center; background-size: cover;} */
-/* #section1 .right-layout .fixed-img:nth-child(2) {background: url("../images/img-kolon-intro-core-value.jpg") no-repeat; background-position: center; background-size: cover;} */
+#section1 .right-layout .fixed-img:nth-child(1) {z-index: 4; background: url("../images/img-kolon-intro-vision.jpg") no-repeat; background-position: center; background-size: cover;}
+#section1 .right-layout .fixed-img:nth-child(2) {z-index: 3;background: url("../images/img-kolon-intro-core-value.jpg") no-repeat; background-position: center; background-size: cover;}
+#section1 .right-layout .fixed-img:nth-child(3) {z-index: 2; background: url("../images/img-kolon-intro-way.jpg") no-repeat; background-position: center; background-size: cover;}
 #section1 .right-layout .fixed-img img {width: 100%; height: 100%; object-fit: cover;}
+ 
+@media screen and (max-width: 768px){
+  #section1 {padding: 150px 0 0 0;}
+  #section1 .fixed-con {padding-top: 50px; display: block;}
 
+  #section1 .left-layout {width: 100%; margin-right: 0;}
+  #section1 .left-layout .mob-img {display: block;}
+  #section1 .left-layout .mob-img img {width: 100%;}
+  #section1 .left-layout .txt-list {display: block; padding: 0; height: auto;}
+  #section1 .left-layout .txt-wrap {padding: 15px 0 70px 0;}
+  #section1 .left-layout .con-title {font-size: 18px;}
+  #section1 .left-layout .con-subtit {margin-top: 10px; font-size: 16px;}
+  #section1 .left-layout .con-txt p {margin-top: 20px; font-size: 12px;}
+  #section1 .left-layout .logo-box {margin-top: 30px;}
+  #section1 .left-layout .logo-box img {width: 160px;}
+
+  #section1 .right-layout {display: none;}
+}
+
+
+/* section2 */
 #section2 {height: 150vh; background-color: #1b1b1b;}
 
-
-
+/* -------------------------------------- main end ------------------------------------- */
