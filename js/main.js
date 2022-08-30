@@ -10,7 +10,8 @@ $(document).ready(function(){
             trigger: $(this),
             start: "top 10%",
             end: "bottom top",
-            pin: true,
+            // pin: true,
+            // pinSpacing: false,
             // markers: true,
           }
         });
@@ -19,6 +20,9 @@ $(document).ready(function(){
       $(".fixed-img").each(function(e){
         gsap.to($(".fixed-img").eq(e).not(".fasten"), {
           top: "-100%",
+          ease: "none",
+          // duration: 1,
+          // ease: SteppedEase.config(7.5),
           scrollTrigger: {
             trigger: $(".txt-list").eq(e+1),
             start: "top 90%",
