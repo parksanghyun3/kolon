@@ -20,7 +20,7 @@ $(document).ready(function(){
       $(".fixed-img").each(function(e){
         gsap.to($(".fixed-img").eq(e).not(".fasten"), {
           top: "-100%",
-          ease: "none",
+          // ease: "none",
           scrollTrigger: {
             trigger: $(".txt-list").eq(e+1),
             start: "top 90%",
@@ -38,7 +38,7 @@ $(document).ready(function(){
           end: "bottom bottom",
           pin: ".right-layout",
           scrub: true,
-          // markers: true,
+          markers: true,
           onEnter: function(){
             $("#section1").addClass("onScroll");
           },
@@ -51,6 +51,9 @@ $(document).ready(function(){
           onLeaveBack: function(){
             $("#section1").removeClass("onScroll");
           },
+          // onComplete: function(){
+
+          // }
         }
       });
     }
